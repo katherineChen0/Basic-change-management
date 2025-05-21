@@ -1,0 +1,1 @@
+My cloned repository only has the master branch locally whereas ~eggert/src/github/git also has a local maint branch checked out. this indicates that Prof Eggert's repo is manually set up to work with specific branches relevant to course content or Git development.

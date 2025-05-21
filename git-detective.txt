@@ -1,0 +1,14 @@
+The Git v2.39 Release notes mention a fix for a segmentation fault that occurred when using git merge-tree in read-only repositories. the tool attempted to create a merge result tree object, which failed but subsequently led to a segmentation fault, which was unintended behavior. 
+
+To pinpoint the specific commit that addressed this issue, I followed these steps:
+1. I examined the Git v2.39 release notes, which described the problem and indicated that it had been corrected.
+2. I searched the Git commit history for relevant changes around the time of the release. This led me to commit 19118cb8570e499e1a56e81740cee3d1c1206b44, which merges the branch js/merge-ort-in-read-only-repo.
+3. The commit message for 19118cb8570e499e1a56e81740cee3d1c1206b44 states that in read only repositories, git merge-tree tried to come up with a merge result tree object, which it failed and it led to a segfault, which has been corrected.
+4. The changes were authored by Junio C Hamana, the maintainer of Git.
+
+The commit ID is 19118cb8570e499e1a56e81740cee3d1c1206b44. Author is Junio C Hamano. The date is 2022-10-10 10:08:43 -0700. The commit message is Merge branch 'js/merge-ort-in-read-only-repo'
+
+To create patch files for the relevant changes in Git format-patch format, I execute the following command:
+git format-patch -1 19118cb8570e499e1a56e81740cee3d1c1206b44
+
+This generates a patch file for the specific commit, which can be applied to other repositories or used for review purposes.
